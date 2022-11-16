@@ -1,0 +1,25 @@
+<odoo>
+	<data>
+        <record id="view_sale_inherit" model="ir.ui.view">
+            <field name="name">view.sale.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                
+                    <xpath expr="//button[@name='preview_sale_order']" position="after">
+                        
+                            <button name="count_lines"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-users">
+                                <field name="total_lines" widget="statinfo" string="Total Lines"/>
+                            </button>
+                       
+                    </xpath>
+                   
+            
+      
+            </field>
+        </record>
+    </data>
+</odoo>
